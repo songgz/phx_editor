@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html {
+            font-size: 62.5%; /*10 ÷ 16 × 100% = 62.5%*/
+        }
+        .poeditor {
+            position: relative;
+            height: 50rem;
+            width: 80rem;
+            overflow-y: scroll;
+            background-color: black;
+            border: solid 0.5rem blue;
+            font-family: 新宋体;
+            font-size: 2rem;
+            line-height: 6rem;
+        }
+
+        .board {
+            word-spacing: 0rem;
+            letter-spacing: 0rem;
+            word-break: break-all;
+            word-wrap: break-word;
+            position: absolute;
+            padding: 0rem;
+            margin: 0rem;
+            left: 0rem;
+            width: 78rem;
+            color: Yellow;
+
+
+        }
+
+        .editor {
+            word-break: break-all;
+            word-wrap: break-word;
+            width: 78rem;
+            word-spacing: normal;
+            letter-spacing: 0rem;
+            margin: 0rem;
+            border: none;
+            position: absolute;
+            top: 0rem;
+            left: 0rem;
+            padding: 2.8rem 0rem 0rem;
+            height: 50rem;
+            overflow-y: hidden;
+            color: white;
+            z-index: 2;
+        }
+    </style>
+
+</head>
+<body>
+<div id="poeditor" class="poeditor">
+    <div id="board" class="board" >⊙○⊙●○○▲，
+⊙○⊙●○○▲。
+⊙●⊙○△，
+⊙○○●△。
+⊙○○●▲，
+⊙●⊙○▲。
+⊙●●○△，
+⊙○⊙●△。</div>
+    <div id="editor" class="editor" contenteditable="plaintext-only"></div>
+</div>
+<script>
+    document.execCommand("defaultParagraphSeparator", false, "br");
+    var board = document.getElementById('board');
+    console.log(board.innerHTML);
+    board.innerHTML = board.innerHTML.replace(/\r\n/g, '<br>');
+    board.innerHTML = board.innerHTML.replace(/\r/g, '<br>');
+    board.innerHTML = board.innerHTML.replace(/\n/g, '<br>');
+</script>
+</body>
+</html>
