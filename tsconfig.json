@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "module": "none",
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "outFile": "./js/build.js",
+    "sourceRoot": "./ts/",
+    "rootDir": "./ts/",
+    "sourceMap": true
+  }
+}
